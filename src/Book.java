@@ -37,4 +37,23 @@ public class Book {
             this.price = newPrice;
         }
     }
+
+    //Discount calculation feature
+    public void applyDiscount (double discountPercentage) {
+
+        //valid
+        if (discountPercentage > 0.0 && discountPercentage < 100.0) {
+            //Calculate & Update the new price
+            price = price * ((100-discountPercentage)/100) ;
+            //print
+            System.out.println("The discount percentage applied: " + discountPercentage + "%\n"
+                                + "The updated price: " + price + "\n");
+        }
+
+        //invalid
+        else {
+            //Print error message and do not update the price
+            System.out.println("Invalid Input\n");
+        }
+    }
 }
